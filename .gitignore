@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+*.log
+.DS_Store
+.idea/
+.vscode/
+
+# Local environments and credentials
+.env
+.env.*
+.venv/
+venv/
+
+# Large experiment artifacts
+ckpt/
+outputs/
+*.pt
+*.pth
+*.tar

@@ -1,0 +1,71 @@
+### base config ###
+
+model_type: "swin"
+exp_dir: '/mnt/data/zhishuai/code/GLORY_WNPACIFIC_reconstruction_v2/exp/PoinTr'
+run_num: 'en4_bg_model3_pre'
+save_checkpoint: True
+save_image: True
+max_epochs: 60
+load_model: True
+load_model_path: '/mnt/e/project/train_online_continue_simsiam_minimal/ckpt/swinunet/best_ckpt.tar'
+
+scheduler: CosineAnnealingLR
+log_to_screen: True
+lr: 0.0001
+log_to_wandb: False
+
+img_size: [720, 960, 32]
+
+
+net_pc:
+  depths:  [2, 2, 2, 1]
+  embed_dim: 120
+  patch_size: 4
+  patch_size_decoder: 8
+    
+
+net_image:
+
+  # Data  
+  N_in_channels: 32
+  N_out_channels: 32
+  window_size: [15, 20]
+
+  # swin transformer parameters
+  depths:  [2, 2, 2, 2, 2]  
+  depths_decoder: [2, 2, 2, 1]
+  num_heads: [3, 6, 12, 6, 3]
+  embed_dim: 96
+  # window_size: 8
+  ape: False
+  patch_norm: True
+  mlp_ratio: 4.
+  shift_size: [7, 10]
+  patch_size: 4
+  earth_specific_pos: False
+  drop_rate: 0.
+  drop_path_rate: 0.1
+  norm_layer: nn.LayerNorm
+  qkv_bias: True
+  qk_scale: None
+  earth_specific_pos: True
+
+  
+  # # Encoder
+  # num_latents: 128
+  # enc_num_latent_channels: 16
+  # num_layers: 3
+  # num_cross_attention_heads: 2
+  # enc_num_self_attention_heads: 2
+  # num_self_attention_layers_per_block: 3
+  # dropout: 0.00
+  
+  # # Decoder
+  # dec_preproc_ch: None
+  # dec_num_latent_channels: 16
+  # dec_num_cross_attention_heads: 1
+  # latent_size: 1
+    
+   
+
+  

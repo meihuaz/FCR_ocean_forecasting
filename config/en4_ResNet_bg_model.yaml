@@ -1,0 +1,28 @@
+model_type: 'resnet'  # 'resnet' / 'swin' / 'convlstm'
+
+# Add your existing configuration below
+# Example:
+exp_dir: './experiments'
+run_num: 1
+max_epochs: 30
+lr: 0.0003
+scheduler: 'CosineAnnealingLR'
+save_checkpoint: True
+load_model: False
+load_model_path: ''
+log_to_screen: True
+save_image: False
+img_size: [720, 960, 32]
+net_image:
+  N_in_channels: 32
+  N_out_channels: 32
+  depths: [1, 2, 2, 2, 1]
+  num_heads: [3, 6, 6, 6, 3]
+  embed_dim: 48
+  window_size: [6, 12]
+  mlp_ratio: 4.0
+  patch_size: 2
+  earth_specific_pos: True
+
+# ConvLSTM baseline extra config (optional)
+convlstm_base_channels: 64

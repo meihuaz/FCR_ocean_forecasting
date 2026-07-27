@@ -1,0 +1,12 @@
+numpy
+PyYAML
+tqdm
+matplotlib
+torch
+torchvision
+timm
+einops
+xarray
+netCDF4
+h5netcdf
+h5py

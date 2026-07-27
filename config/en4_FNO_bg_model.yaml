@@ -1,0 +1,39 @@
+model_type: 'fno'
+
+exp_dir: './experiments'
+run_num: 'fno_strong_1'
+max_epochs: 30
+lr: 0.0003
+scheduler: 'CosineAnnealingLR'
+save_checkpoint: True
+load_model: False
+load_model_path: ''
+log_to_screen: True
+save_image: False
+
+seed: 123
+batch_size: 6
+num_workers: 4
+train_shuffle: True
+test_shuffle: False
+pin_memory: True
+persistent_workers: True
+prefetch_factor: 4
+
+img_size: [720, 960, 32]
+
+net_image:
+  N_in_channels: 32
+  N_out_channels: 32
+  depths: [1, 2, 2, 2, 1]
+  num_heads: [3, 6, 6, 6, 3]
+  embed_dim: 48
+  window_size: [6, 12]
+  mlp_ratio: 4.0
+  patch_size: 2
+  earth_specific_pos: True
+
+fno_width: 48
+fno_modes1: 20
+fno_modes2: 20
+fno_num_layers: 4
